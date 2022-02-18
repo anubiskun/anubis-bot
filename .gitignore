@@ -13,6 +13,7 @@ database.json
 
 # tmp
 
+.*.tmp
 # Okay
 # config.js
 
@@ -20,6 +21,11 @@ database.json
 credentials.json
 token.json
 
+# added by anubiskun
+ig-*@s.whatsapp.net.json
+cookies.json
+tmp/*.jpg
+tmp/*.mp4
 
 # source code inspecting purposes
 waweb

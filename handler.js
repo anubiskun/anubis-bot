@@ -35,6 +35,12 @@ module.exports = {
             if (!isNumber(user.age)) user.age = -1
             if (!isNumber(user.regTime)) user.regTime = -1
           }
+          if (!('iglogined' in user)) user.iglogined = false
+          if (!user.iglogined) {
+            if (!user.igusername) user.igusername = ''
+            if (!user.igpassword) user.igpassword = ''
+            if (!isNumber(user.igregTime)) user.igregTime = -1
+          }
           if (!isNumber(user.afk)) user.afk = -1
           if (!('afkReason' in user)) user.afkReason = ''
           if (!('banned' in user)) user.banned = false
@@ -51,6 +57,10 @@ module.exports = {
           name: this.getName(m.sender),
           age: -1,
           regTime: -1,
+          iglogined: false,
+          igusername: '',
+          igpassword: '',
+          igregTime: -1,
           afk: -1,
           afkReason: '',
           banned: false,
@@ -257,6 +267,10 @@ module.exports = {
             fail('unreg', m, this)
             continue
           }
+          if (plugin.igbot == true && _user.iglogined == false) { // Butuh daftar?
+            fail('iglogin', m, this)
+            continue
+          }
 
           m.isCommand = true
           let xp = 'exp' in plugin ? parseInt(plugin.exp) : 17 // XP Earning per command
@@ -439,6 +453,7 @@ global.dfail = (type, m, conn) => {
     private: 'Perintah ini hanya dapat digunakan di Chat Pribadi!',
     admin: 'Perintah ini hanya untuk *Admin* grup!',
     botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini!',
+    iglogin: 'Silahkan Login untuk menggunakan fitur ini dengan cara mengetik:\n\n*.instalogin username password*\n\nContoh: *.instalogin usernamelu passwordiglu*',
     unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Manusia.16*'
   }[type]
   if (msg) return m.reply(msg)

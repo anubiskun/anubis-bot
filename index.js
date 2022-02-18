@@ -32,15 +32,19 @@ function start(file) {
     stdio: ['inherit', 'inherit', 'inherit', 'ipc']
   })
   p.on('message', data => {
-    console.log('[RECEIVED]', data)
+    console.log('> ', data)
     switch (data) {
       case 'reset':
-        p.kill()
-        isRunning = false
-        start.apply(this, arguments)
+        p.kill();
+        start.apply(this, arguments);
         break
       case 'uptime':
-        p.send(process.uptime())
+        p.send(process.uptime());
+        break
+      case 'stop':
+        p.kill();
+        console.log('jangan ubah beberapa file bang error kan!')
+        process.exit(1);
         break
     }
   })

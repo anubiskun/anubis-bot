@@ -10,16 +10,16 @@ let handler = async (m, { conn, command, args }) => {
     return `*${title}*\n_${link}_\n_${snippet}_`
   }).join`\n\n`
   try {
-    let ss = await (await fetch(global.API('nrtm', '/api/ssweb', { delay: 1000, url, full }))).buffer()
+    let ss = await (await fetch(`https://shot.screenshotapi.net/screenshot?&url=${url}&width=720&height=2080&fresh=true&output=image&file_type=jpeg&wait_for_event=load`)).buffer()
     if (ss.includes('html')) throw ''
-    await conn.sendFile(m.chat, ss, 'screenshot.png', url + '\n\n' + msg, m)
+    await conn.sendFile(m.chat, ss, 'screenshot.jpg', '© anubis-bot' + '\n\n' + msg, m)
   } catch (e) {
     m.reply(msg)
   }
 }
-handler.help = ['search','google', 'googlef'].map(v => v + ' <pencarian>')
+handler.help = ['search', 'googlef'].map(v => v + ' pencarian')
 handler.tags = ['internet']
-handler.command = /^(search|google)f$/i
+handler.command = /^(search|googlef)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
