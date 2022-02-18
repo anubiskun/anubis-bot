@@ -1,5 +1,5 @@
 <!-- created by anubiskun -->
-
+# 
 [![website](https://img.shields.io/badge/-website-black.svg?style=for-the-badge&logo=firefoxbrowser&colorB=555)](https://www.anubiskun.xyz)
 [![api rest](https://img.shields.io/badge/-api_rest-black.svg?style=for-the-badge&logo=firefoxbrowser&colorB=555)](https://www.api.anubiskun.xyz)
 [![github](https://img.shields.io/badge/-Github-black.svg?style=for-the-badge&logo=github&colorB=555)](https://github.com/anubiskun)
@@ -24,6 +24,17 @@
 </p>
 <!-- isi content -->
 
+# 
+# added instabot
+[new instabot include, tested!](https://github.com/anubiskun/anubis-bot/blob/b709a644956254d5345daa7d310f320c26b5e563/lib/instagram-api.js)
+
+`- login cmd '.instalogin username password'`
+
+`- post '.instapost caption|reply image/video'`
+
+`- delete post '.instadel url'`
+
+`- get profile '.instagetprofile'`
 # anubis-bot
 
 Simple WhatsApp Bot
