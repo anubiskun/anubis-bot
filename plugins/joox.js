@@ -9,8 +9,6 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
     const getidJoox = text.match(/https?:\/\/(www\.)?joox\.[a-z]+\/[a-z]+\/\w+\/([-a-zA-Z0-9()@:%_+.~#?&/=]*)/)
     let jjson = await joox(getidJoox[2])
     let json = jjson.data[Math.floor(Math.random() * jjson.data.length)]
-    // let res = await fetch(`https://www.api.anubiskun.xyz/joox/?song=${getidJoox[2]}`)
-    // let json = await res.json()
     if (json==null) return m.reply('error lagu ga bisa di download!')
     let pesan = `
 *Penyanyi:* ${json.msinger}
