@@ -19,7 +19,7 @@
   <p align="center">
     <a href="https://www.anubiskun.xyz/"><strong>Explore the docs ?</strong></a>
     <br />
-    <a href="https://t.me/anubiskun">Report Bug</a>
+    <a href="mailto: anubiskun.xyz@gmail.com">Report Bug</a>
   </p>
 </p>
 <!-- isi content -->
